@@ -1,0 +1,20 @@
+//Pseudo code for pseron.java
+
+create class
+create static main
+
+intialize all variable 
+    -firstName
+    -lastName
+    -streetAddress
+    -city
+    -zipCode
+
+print statments for the mentioned variables
+    -print firstName
+    -print lastName
+    -print streetAddress
+    -print city
+    -print zipCode
+
+
