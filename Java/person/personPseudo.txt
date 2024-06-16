@@ -3,7 +3,7 @@
 create class
 create static main
 
-intialize all variable 
+initialize  all variable 
     -firstName
     -lastName
     -streetAddress
