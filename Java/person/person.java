@@ -6,7 +6,7 @@ public class person{
 	public static void main (String [] args){
 		String firstName = "Tom";
 		String lastName = "Riddle";
-		String streetAddress = "9 3/4 Hogwarts School of Witchcraft and Wizardry\nHogwarts Castle";
+		String streetAddress = "9 & 3/4 Hogwarts School of Witchcraft and Wizardry\nHogwarts Castle";
 		String city = "Scottish Highlands, Great Britian";
 		int zipCode = 12345;
 		
