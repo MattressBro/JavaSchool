@@ -10,7 +10,7 @@ initialize  all variable
     -city
     -zipCode
 
-print statments for the mentioned variables
+print statements for the mentioned variables
     -print firstName
     -print lastName
     -print streetAddress
