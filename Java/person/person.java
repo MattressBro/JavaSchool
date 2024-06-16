@@ -8,7 +8,7 @@ public class person{
 		String lastName = "Riddle";
 		String streetAddress = "9 & 3/4 Hogwarts School of Witchcraft and Wizardry\nHogwarts Castle";
 		String city = "Scottish Highlands, Great Britian";
-		int zipCode = 12345;
+		int zipCode = 73069;
 		
 		System.out.println(firstName);
 		System.out.println(lastName);
