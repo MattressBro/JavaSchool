@@ -1,1 +1,25 @@
+//Braden Heeney
+//CSC320-1
+//Module 3 Critical Thinking - Option #1
+//Calculate Average Witholding
 
+import scanner library
+
+create class
+create main
+	create scanner object s
+	prompt user for input of weekly earnings
+	record next double as variable income
+	create taxRate variable
+	if income < 500
+		taxRate = 10%
+	else if income between 500 & 1499
+		taxRate = 15%
+    else if income between 1500 and 2499
+        taxRate = 20%
+    else 2500 and above 
+        taxRate = 30%
+    Print out income 
+    print out tax Rate
+    print out tax witholdings amount 
+    close the scanner
