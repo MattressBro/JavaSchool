@@ -1,0 +1,14 @@
+pseudo code for Grade assisnment
+Module 
+
+import scanner
+
+initialize scanner
+welcome message
+initialize int array, int max, int min, int total count
+for - i=0 i < 10 i++
+  enter grade 10 times
+  if its a correct response accept
+  otherwise turn back the counter one and reject response
+  update min, max, and totalCount variables
+System print messages for averagge, ax, and min
