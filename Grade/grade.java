@@ -19,7 +19,7 @@ public class grade{
                 numbers[i] = s.nextInt();
             }
             else{
-                System.out.println("Error: "+s.next()+" is not a valid reponse");
+                System.out.println("Error: "+s.next()+" is not a valid response");
                 i--;
             }
             totalCount += numbers[i];
