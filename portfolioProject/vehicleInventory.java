@@ -15,9 +15,11 @@ public class VehicleInventory{
     }
     public void displayInventory(){
         for(int i=0; i < inventory.size(); i++){
-            System.out.println("Make: "+inventory.get(i).getMake());
-            System.out.println("Model: "+inventory.get(i).getModel());
-            System.out.println("Color: "+inventory)
+            System.out.println(inventory.get(i).getMake()+" "+inventory.get(i).getModel());
+            System.out.println("    Color: "+inventory.get(i).getColor());
+            System.out.println("    Year: "+inventory.get(i).getYear());
+            System.out.println("    Mileage: "+inventory.get(i).getMileage());
+            System.out.println();
         }
     }
 }
