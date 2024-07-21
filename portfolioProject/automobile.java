@@ -1,8 +1,10 @@
+package portfolioProject;
+
 //Braden Heeney
 //Module 6 milestone portfolio project
-//Submit document with methods for your automobile class, and pseudo code indicating functionality of each method.
+//Submit document with methods for your Automobile class, and pseudo code indicating functionality of each method.
 
-public class automobile{
+public class Automobile{
     private String make;
     private String model;
     private String color;
@@ -10,14 +12,14 @@ public class automobile{
     private int mileage;
 
     //default constructor
-    public automobile(){
+    public Automobile(){
         make="";
         model="";
         color="";
         year=9999;
         mileage=9999;
     }
-    public automobile(String make, String model, String color, int year, int mileage){
+    public Automobile(String make, String model, String color, int year, int mileage){
         this.make=make;
         this.model=model;
         this.color=color;
