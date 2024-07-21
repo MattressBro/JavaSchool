@@ -1,5 +1,3 @@
-package portfolioProject;
-
 //Braden Heeney
 //Module 6 milestone portfolio project
 //Submit document with methods for your automobile class, and pseudo code indicating functionality of each method.
@@ -32,7 +30,7 @@ public class automobile{
     public void setMake(String input){
         this.make=input;
     }
-    public void getModel(){
+    public String getModel(){
         return model;
     }
     public void setModel(String input){
@@ -42,7 +40,7 @@ public class automobile{
         return color;
     }
     public void setColor(String input){
-        this.color=color;
+        this.color=input;
     }
     public int getYear(){
         return year;
