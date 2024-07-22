@@ -64,8 +64,4 @@ public class Vehicle{
         System.out.println(" Mileage: "+this.getMileage());
         System.out.println();
     }
-
-
-    
-
 }
