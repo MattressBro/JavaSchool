@@ -2,9 +2,9 @@ package portfolioProject;
 
 //Braden Heeney
 //Module 6 milestone portfolio project
-//Submit document with methods for your Automobile class, and pseudo code indicating functionality of each method.
+//Submit document with methods for your Vehicle class, and pseudo code indicating functionality of each method.
 
-public class Automobile{
+public class Vehicle{
     private String make;
     private String model;
     private String color;
@@ -12,14 +12,14 @@ public class Automobile{
     private int mileage;
 
     //default constructor
-    public Automobile(){
-        make="";
-        model="";
+    public Vehicle(){
+        make="Make";
+        model="Model";
         color="";
         year=9999;
         mileage=9999;
     }
-    public Automobile(String make, String model, String color, int year, int mileage){
+    public Vehicle(String make, String model, String color, int year, int mileage){
         this.make=make;
         this.model=model;
         this.color=color;
@@ -55,6 +55,14 @@ public class Automobile{
     }
     public void setMileage(int input){
         this.mileage=input;
+    }
+    public void displayInformation(){
+        System.out.println("    Make: "+this.getMake());
+        System.out.println("   Model: "+this.getModel());
+        System.out.println("   Color: "+this.getColor());
+        System.out.println("    Year: "+this.getYear());
+        System.out.println(" Mileage: "+this.getMileage());
+        System.out.println();
     }
 
 
