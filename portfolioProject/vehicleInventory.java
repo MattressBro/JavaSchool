@@ -35,9 +35,6 @@ public class VehicleInventory{
     private static String border = "--------------------------------------------------------------------";
     private static Scanner s = new Scanner(System.in);
     public static void addAuto(){
-        System.out.println();
-        System.out.printf("%40s\n","Add  Vehicle ");
-        System.out.printf("%21s\n",border);
         inventory.add(new Vehicle());
         System.out.print("Enter Make: ");
         inventory.get(inventory.size()-1).setMake(s.next());
@@ -54,9 +51,6 @@ public class VehicleInventory{
     }
 
     public static void removeAuto(){
-        System.out.println();
-        System.out.printf("%40s\n","Remove Vehicle");
-        System.out.printf("%21s\n",border);
         if(hasInventory()){
             displayInventory();
             System.out.print("Remove vehicle #: ");
@@ -74,6 +68,32 @@ public class VehicleInventory{
             System.out.println();
         }
         
+    }
+    public static void editAuto(){
+        if(hasInventory()){
+            displayInventory();
+            System.out.print("Edit vehicle #: ");
+            int input = parse(s.next())-1;
+            try{
+                System.out.print("Enter Make: ");
+                inventory.get(input).setMake(s.next());
+                System.out.print("Enter Model: ");
+                inventory.get(input).setModel(s.next());
+                System.out.print("Enter Color: ");
+                inventory.get(input).setColor(s.next());
+                System.out.print("Enter Year: ");
+                inventory.get(input).setYear(parse(s.next()));
+                System.out.print("Enter Mileage: ");
+                inventory.get(input).setMileage(parse(s.next()));
+                System.out.println(inventory.get(input).getMake()+" "+inventory.get(input).getModel()+" added to inventory.");
+            }catch(IndexOutOfBoundsException e){
+                System.out.println("Invalid Entry");
+            }
+        }
+        else{
+            System.out.println("No current inventory");
+            System.out.println();
+        }
     }
 
     public static boolean hasInventory(){
@@ -132,10 +152,12 @@ public class VehicleInventory{
     }
 
     public static void main(String[] args){
-        System.out.println(" Vehicle Inventory Manager ");
-        System.out.println("==============================");
+        System.out.printf("%45s\n","Vehicle Inventory Manager");
+        System.out.printf("%21s\n",border);
+        System.out.printf("%21s\n",border);
         System.out.println();
-        while(true){
+        boolean exit=true;
+        while(exit){
             showMenu();
             System.out.print("Enter Selection: ");
             switch (parse(s.next())) {
@@ -146,14 +168,25 @@ public class VehicleInventory{
                     displayInventory();
                     break;
                 case 2:
+                    System.out.println();
+                    System.out.printf("%40s\n","Add  Vehicle ");
+                    System.out.printf("%21s\n",border);
                     addAuto();
                     break;
                 case 3:
+                    System.out.println();
+                    System.out.printf("%40s\n","Remove Vehicle");
+                    System.out.printf("%21s\n",border);
                     removeAuto();
                     break;
                 case 4:
-                    System.out.println("Edit Vehicle Information:");
-                    //editAuto(inventory);
+                    System.out.println();
+                    System.out.printf("%40s\n","Edit Vehicle");
+                    System.out.printf("%21s\n",border);
+                    editAuto();
+                    break;
+                case 6:
+                    exit=false;
                     break;
                 default:
                     System.out.println("Invalid Entry");
