@@ -16,8 +16,8 @@ public class Vehicle{
         make="Make";
         model="Model";
         color="";
-        year=9999;
-        mileage=9999;
+        year=0;
+        mileage=0;
     }
     public Vehicle(String make, String model, String color, int year, int mileage){
         this.make=make;
@@ -30,19 +30,20 @@ public class Vehicle{
         return make;
     }
     public void setMake(String input){
-        this.make=input;
+        this.make=input.toUpperCase();
+        
     }
     public String getModel(){
         return model;
     }
     public void setModel(String input){
-        this.model=input;
+        this.model=input.toUpperCase();
     }
     public String getColor(){
         return color;
     }
     public void setColor(String input){
-        this.color=input;
+        this.color=input.toUpperCase();
     }
     public int getYear(){
         return year;
@@ -57,11 +58,11 @@ public class Vehicle{
         this.mileage=input;
     }
     public void displayInformation(){
-        System.out.println("    Make: "+this.getMake());
-        System.out.println("   Model: "+this.getModel());
-        System.out.println("   Color: "+this.getColor());
-        System.out.println("    Year: "+this.getYear());
-        System.out.println(" Mileage: "+this.getMileage());
-        System.out.println();
+        System.out.printf("%10s %10s %10s %10s %10s\n",this.getMake(),this.getModel(), this.getColor(), this.getYear(), this.getMileage());
+        //System.out.println("   Model: "+this.getModel());
+        //System.out.println("   Color: "+this.getColor());
+        //System.out.println("    Year: "+this.getYear());
+        //System.out.println(" Mileage: "+this.getMileage());
+        //System.out.println();
     }
 }
