@@ -28,6 +28,9 @@ public class VehicleInventory{
 */
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 public class VehicleInventory{
     private static ArrayList<Vehicle> inventory = new ArrayList<Vehicle>();
@@ -35,19 +38,23 @@ public class VehicleInventory{
     private static String border = "--------------------------------------------------------------------";
     private static Scanner s = new Scanner(System.in);
     public static void addAuto(){
-        inventory.add(new Vehicle());
-        System.out.print("Enter Make: ");
-        inventory.get(inventory.size()-1).setMake(s.next());
-        System.out.print("Enter Model: ");
-        inventory.get(inventory.size()-1).setModel(s.next());
-        System.out.print("Enter Color: ");
-        inventory.get(inventory.size()-1).setColor(s.next());
-        System.out.print("Enter Year: ");
-        inventory.get(inventory.size()-1).setYear(parse(s.next()));
-        System.out.print("Enter Mileage: ");
-        inventory.get(inventory.size()-1).setMileage(parse(s.next()));
-        System.out.println(inventory.get(inventory.size()-1).getMake()+" "+inventory.get(inventory.size()-1).getModel()+" added to inventory.");
-        System.out.println();
+        try{
+            inventory.add(new Vehicle());
+            System.out.print("Enter Make: ");
+            inventory.get(inventory.size()-1).setMake(s.next());
+            System.out.print("Enter Model: ");
+            inventory.get(inventory.size()-1).setModel(s.next());
+            System.out.print("Enter Color: ");
+            inventory.get(inventory.size()-1).setColor(s.next());
+            System.out.print("Enter Year: ");
+            inventory.get(inventory.size()-1).setYear(parse(s.next()));
+            System.out.print("Enter Mileage: ");
+            inventory.get(inventory.size()-1).setMileage(parse(s.next()));
+            System.out.println(inventory.get(inventory.size()-1).getMake()+" "+inventory.get(inventory.size()-1).getModel()+" added to inventory.");
+            System.out.println();
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("Invalid Entry");
+        }
     }
 
     public static void removeAuto(){
@@ -85,7 +92,7 @@ public class VehicleInventory{
                 inventory.get(input).setYear(parse(s.next()));
                 System.out.print("Enter Mileage: ");
                 inventory.get(input).setMileage(parse(s.next()));
-                System.out.println(inventory.get(input).getMake()+" "+inventory.get(input).getModel()+" added to inventory.");
+                System.out.println(inventory.get(input).getMake()+" "+inventory.get(input).getModel()+" edited.");
             }catch(IndexOutOfBoundsException e){
                 System.out.println("Invalid Entry");
             }
@@ -150,7 +157,25 @@ public class VehicleInventory{
         System.out.println("6:Quit");
         System.out.println();
     }
-
+    public static boolean exportInventory(){
+        if(hasInventory()){
+            File file = new File("VehicleInventory.txt");
+            try{
+                System.out.println("Exporting inventory and closing program.");
+                System.setOut(new PrintStream(file));
+                displayInventory();
+                return false;
+            }catch(FileNotFoundException e){
+                System.out.println("File Not Found");
+                return true;
+            }
+        }
+        else{
+            System.out.println("No current inventory");
+            System.out.println();
+            return true;
+        }
+    }
     public static void main(String[] args){
         System.out.printf("%45s\n","Vehicle Inventory Manager");
         System.out.printf("%21s\n",border);
@@ -184,6 +209,9 @@ public class VehicleInventory{
                     System.out.printf("%40s\n","Edit Vehicle");
                     System.out.printf("%21s\n",border);
                     editAuto();
+                    break;
+                case 5:
+                    exit=exportInventory();
                     break;
                 case 6:
                     exit=false;
